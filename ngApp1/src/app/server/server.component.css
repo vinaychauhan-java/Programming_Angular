@@ -1,0 +1,13 @@
+h3{
+    font-family: Arial;
+    font-size: small;
+}
+
+
+.online{
+    color:white;
+}
+
+.offline{
+    color:yellow;
+}

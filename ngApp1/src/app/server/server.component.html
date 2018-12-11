@@ -1,0 +1,46 @@
+<h3>
+    <label>Server Name : </label>
+    <!-- Example for passing and using data with Event Bidning  -->
+    <!--
+        Note:- (1) $event object is used to fetch the Event Data
+    -->
+    <input type="text" class="form-control" (input)="onUpdateServerName($event)">
+    <!-- <p>{{ serverName }}</p> -->
+
+    <!-- An Example of Two-Way-DataBinding (UnComment the code for usage) -->
+    <!--<input type="text" class="form-control" [(ngModel)]="serverName">-->
+
+    <!-- Example of Property Binding with respect to native "disabled" property of Button element -->
+    <!-- Example of Event Binding with respect to click event -->
+    <!-- 
+        Note:-  (1) String Interpolation will not work in Property Binding or Expression
+                Example :- [disabled]="{{allowNewServer}}" will not work
+                (2) Never mix String Interpolation with Property Binding in Angular
+    -->
+    <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">
+        Add Server
+    </button>
+
+    <!-- ngIf is a directive and varaible/method could be mapped ot it accordingly -->
+    <!--
+        Note:- (1) Here, '*' with ngIf shows that it is a structure directive which could change the DOM
+    -->
+    <p *ngIf="isServerCreated; else noServerCreatedMsg">{{ serverCreationStatus }}</p>
+
+    <!-- ng-template is a directive which could be used with marker/local-reference (i.e. #) -->
+    <ng-template #noServerCreatedMsg>
+        <p> No Server was Created !! </p>
+    </ng-template>
+
+    <!--<p [innerText]="allowNewServer"> </p>-->
+
+    <!-- Example of String Interpolation -->
+    <!-- Server with Id {{ serverId }} is {{ serverStatus }} -->
+
+    <!-- ngStyle is a attribute directive and square brackets indicates that we want to bind to some property on this directive -->
+    <!-- Here, ngStyle property expects to get a javascript object and we will defined key value pairs accordingly -->
+    <p [ngStyle]="{'background-color': getServerStatusColor()}"
+       [ngClass]="{online: getServerStatus()==='ON-LINE'}">
+        Server with Id {{ serverId }} is {{ getServerStatus() }}
+    </p>
+</h3>
