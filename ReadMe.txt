@@ -9,6 +9,15 @@ https://visualstudio.microsoft.com/
 
 
 =======================================
+Angular Code : Referenced For
+=======================================
+ngApp1   : For String Interpolation, Property Binding, Event Binding & Two-Way Data Binding
+ngApp2   : For Debugging & For-Loop activities 
+ngApp3   : For Component & Data Binding
+ngAppPrj : For Project Artifacts
+
+
+=======================================
 For Angular
 =======================================
 D:\>npm install -g @angular/cli
@@ -100,14 +109,21 @@ D:\Programming_Angular\ngApp1>ng generate component XServer
 	
 
 =======================================
+Creating Angular project and adding BootStrap 
+=======================================
+D:\Programming_Angular>ng new ngApp2
+D:\Programming_Angular>cd ng ngApp2
+D:\Programming_Angular\ngApp2>npm install --save bootstrap@3
+
+
+=======================================
 Bindable Properties and Events : Tips
 =======================================
-How do you know to which Properties or Events of HTML Elements you may bind? You can basically bind to all Properties and Events - a good idea is to console.log() the element you're interested in to see which properties and events it offers.
+How do you know to which Properties or Events of HTMLï¿½Elements you may bind? You can basically bind to all Properties and Events - a good idea is to console.log() the element you're interested in to see which properties and events it offers.
 
-Important: For events, you don't bind to onclick but only to click (=> (click)).
+Important:ï¿½For events, you don't bind to onclick but only to click (=>ï¿½(click)).
 
-The MDN (Mozilla Developer Network) offers nice lists of all properties and events of the element you're interested in. Googling for YOUR_ELEMENT properties  or YOUR_ELEMENT events  should yield nice results.
+The MDNï¿½(Mozilla Developer Network)ï¿½offers nice lists of all properties and events of the element you're interested in. Googling for YOUR_ELEMENT propertiesï¿½ or YOUR_ELEMENT eventsï¿½ should yield nice results.
 
-For Two-Way-Binding to work, you need to enable the ngModel  directive. This is done by adding the FormsModule to the imports[] array in the AppModule. You then also need to add the import from @angular/forms  in the app.module.ts file: import { FormsModule } from '@angular/forms'; 
-
+For Two-Way-Binding to work, you need to enable the ngModelï¿½ directive. This is done by adding the FormsModuleï¿½to the imports[]ï¿½array in the AppModule. You then also need to add the import from @angular/formsï¿½ in the app.module.ts file: import { FormsModule } from '@angular/forms';ï¿½
 
