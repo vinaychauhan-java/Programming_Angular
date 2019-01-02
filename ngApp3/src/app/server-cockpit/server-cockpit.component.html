@@ -1,0 +1,14 @@
+<div>
+  <p><b>!! Add new Servers or BluePrints !!</b></p>
+  <label>Server Name</label>
+  <!--<input type="text" class="form-control" [(ngModel)]="newServerName">-->
+  <!-- Example of local reference in Template as two-way binding is not required (sometimes) -->
+  <input type="text" class="form-control" #serverNameInputRef>
+  <label>Server Content</label>
+  <!--<input type="text" class="form-control" [(ngModel)]="newServerContent">-->
+  <!-- Example of local reference through @ViewChild Decorator as two-way binding is not required (sometimes) -->
+  <input type="text" class="form-control" #serverContentInputRef>
+  <br>
+  <button class="btn btn-primary" (click)="onAddServer(serverNameInputRef)">Add Server</button>
+  <button class="btn btn-primary" (click)="onAddBluePrint(serverNameInputRef)">Add Server Blueprint</button>
+</div>

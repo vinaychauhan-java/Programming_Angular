@@ -1,0 +1,4 @@
+/* Angular provides encapsulation for CSS hence style provided to this component will not be reflected to another */
+p {
+    color: green;
+}
