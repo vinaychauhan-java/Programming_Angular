@@ -9,11 +9,14 @@ https://visualstudio.microsoft.com/
 
 
 =======================================
-Angular Code : Referenced For
+Angular Code @ Referenced For
 =======================================
 ngApp1   : For String Interpolation, Property Binding, Event Binding & Two-Way Data Binding
 ngApp2   : For Debugging & For-Loop activities 
 ngApp3   : For Component & Data Binding
+ngApp4   : For Directives
+ngApp5   : For Services and Dependency Injection (Basic)
+ngApp6   : For Services and Dependency Injection (Advanced)
 ngAppPrj : For Project Artifacts
 
 
@@ -106,8 +109,31 @@ D:\Programming_Angular\ngApp1>ng generate component XServer
 	CREATE src/app/xserver/xserver.component.ts (273 bytes)
 	CREATE src/app/xserver/xserver.component.css (0 bytes)
 	UPDATE src/app/app.module.ts (644 bytes)
-	
 
+	
+=======================================
+Creating Directives with CLI 
+=======================================
+D:\Programming_Angular\ngApp4>ng g d better-highlight/better-highlight
+	CREATE src/app/better-highlight/better-highlight.directive.spec.ts (261 bytes)
+	CREATE src/app/better-highlight/better-highlight.directive.ts (159 bytes)
+	UPDATE src/app/app.module.ts (673 bytes)
+
+D:\Programming_Angular\ngApp4>ng g d better-highlight/another-better-highlight --spec false
+	CREATE src/app/better-highlight/another-better-highlight.directive.ts (173 bytes)
+	UPDATE src/app/app.module.ts (815 bytes)
+
+		
+=======================================
+How to get npm work behind Proxy Server and other Useful commands
+=======================================
+npm config set proxy "http://<<DOMAIN_NAME>>%5C<<UserName>>:<<UserPassword>>@<<SERVER_IP_ADDRESS>>:<<SERVER_PORT>>/"
+npm config set https-proxy "http://<<DOMAIN_NAME>>%5C<<UserName>>:<<UserPassword>>@<<SERVER_IP_ADDRESS>>:<<SERVER_PORT>>/"
+npm config get proxy 
+npm config get https-proxy
+npm config list
+
+	
 =======================================
 Creating Angular project and adding BootStrap 
 =======================================
@@ -115,7 +141,13 @@ D:\Programming_Angular>ng new ngApp2
 D:\Programming_Angular>cd ng ngApp2
 D:\Programming_Angular\ngApp2>npm install --save bootstrap@3
 
+Note:- Update BootStrap entry in angular.json file
+		"styles": [
+		  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+		  "src/styles.css"
+		]
 
+		
 =======================================
 Bindable Properties and Events : Tips
 =======================================
@@ -126,4 +158,3 @@ Important: For events, you don't bind to onclick but only to click (=> (click)).
 The MDN (Mozilla Developer Network) offers nice lists of all properties and events of the element you're interested in. Googling for YOUR_ELEMENT properties  or YOUR_ELEMENT events  should yield nice results.
 
 For Two-Way-Binding to work, you need to enable the ngModel  directive. This is done by adding the FormsModule to the imports[] array in the AppModule. You then also need to add the import from @angular/forms  in the app.module.ts file: import { FormsModule } from '@angular/forms'; 
-
