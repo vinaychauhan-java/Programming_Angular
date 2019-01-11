@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onlyOdd = !onlyOdd">
+        <ng-template [ngIf]="onlyOdd">
+          <p>Showing Only Odd Numbers, Plz Click to Revert</p>
+        </ng-template>
+        <ng-template [ngIf]="!onlyOdd">
+          <p>Showing Only Even Numbers, Plz Click to Revert</p>
+        </ng-template>
+      </button>
+      <br><br>
+      <ul class="list-group">
+        <!-- We can't use *ng-structured-directives twice with an element hence logic is managed with div and li tags -->
+        <!--
+        <div *ngIf="onlyOdd">
+          <li class="list-group-item" [ngClass]="{odd_CSS: oddNumber % 2 !== 0}" [ngStyle]="{backgroundColor: oddNumber % 2 !== 0 ? 'yellow' : 'transparent'}"
+            *ngFor="let oddNumber of oddNumbers">
+            <b>{{ oddNumber }} </b>
+          </li>
+        </div>
+        <div *ngIf="!onlyOdd">
+          <li class="list-group-item" [ngClass]="{even_CSS: evenNumber % 2 == 0}" [ngStyle]="{backgroundColor: evenNumber % 2 == 0 ? 'transparent' : 'yellow'}"
+            *ngFor="let evenNumber of evenNumbers">
+            <b> {{ evenNumber }} </b>
+          </li>
+        </div>
+        -->
+        <!-- Usage of custom structure directive otherwise above code will work as it is :-) -->
+        <div *appUnless="onlyOdd">
+          <li class="list-group-item" [ngClass]="{odd_CSS: oddNumber % 2 !== 0}" [ngStyle]="{backgroundColor: oddNumber % 2 !== 0 ? 'yellow' : 'transparent'}"
+            *ngFor="let oddNumber of oddNumbers">
+            <b>{{ oddNumber }} </b>
+          </li>
+        </div>
+        <div *appUnless="!onlyOdd">
+          <li class="list-group-item" [ngClass]="{even_CSS: evenNumber % 2 == 0}" [ngStyle]="{backgroundColor: evenNumber % 2 == 0 ? 'transparent' : 'yellow'}"
+            *ngFor="let evenNumber of evenNumbers">
+            <b> {{ evenNumber }} </b>
+          </li>
+        </div>
+      </ul>
+      <br><br>
+      <p appBasicHighlight>Applying Style with "Basic Directive" :-) </p>
+      <p appBetterHighlight>Applying Style with "Better Directive" :-) </p>
+      <p appAnotherBetterHighlight>Applying Style with "Another Better Directive" :-) </p>
+      <!-- Examples of Property Binding To Directives -->
+      <p appBestHighlight [defaultColor]="'transparent'" [highlightColor]="'lightgreen'">Applying Style with "Best Directive" :-) </p>
+      <p appBestHighlight defaultColor="transparent" highlightColor="lightgreen">Applying Style in different manner with "Best Directive" :-) </p>
+      <br><br>
+      <div [ngSwitch]="caseValue"> <b> Usage of ngSwitch:- </b>
+        <p *ngSwitchCase="5">Paragraph Value : 5</p>
+        <p *ngSwitchCase="10">Paragraph Value : 10</p>
+        <p *ngSwitchCase="15">Paragraph Value : 15</p>
+        <p *ngSwitchDefault>Paragraph Value : Default</p>
+      </div>
+    </div>
+  </div>
+</div>
