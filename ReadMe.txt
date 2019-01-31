@@ -17,6 +17,9 @@ ngApp3   : For Component & Data Binding
 ngApp4   : For Directives
 ngApp5   : For Services and Dependency Injection (Basic)
 ngApp6   : For Services and Dependency Injection (Advanced)
+ngApp7   : For Routing with Params, QueryParams and Fragment
+ngApp8   : For Routing with Child and WildCard Routes
+ngApp9   : For Routing with Guards
 ngAppPrj : For Project Artifacts
 
 
