@@ -1,0 +1,9 @@
+<p>User with ID {{ user.id}} loaded...</p>
+<p>User name is {{ user.name }}</p>
+<hr>
+<!-- 
+    (1) Routing when we are on the same component
+    (2) It will make the URL as /users/101/SystemUser
+    (3) Since, we are on the same component hence we have to subscribe the route params
+-->
+<a [routerLink]="['/users',101,'SystemUser']">Let's Load SysTem User</a>
