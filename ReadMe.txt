@@ -19,7 +19,7 @@ ngApp5   : For Services and Dependency Injection (Basic)
 ngApp6   : For Services and Dependency Injection (Advanced)
 ngApp7   : For Routing with Params, QueryParams and Fragment
 ngApp8   : For Routing with Child and WildCard Routes
-ngApp9   : For Routing with Guards
+ngApp9   : For Routing with Guards and Error Handling
 ngAppPrj : For Project Artifacts
 
 
