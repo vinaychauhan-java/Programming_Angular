@@ -20,6 +20,7 @@ ngApp6   : For Services and Dependency Injection (Advanced)
 ngApp7   : For Routing with Params, QueryParams and Fragment
 ngApp8   : For Routing with Child and WildCard Routes
 ngApp9   : For Routing with Guards and Error Handling
+ngApp10  : For Observables
 ngAppPrj : For Project Artifacts
 
 
@@ -150,6 +151,13 @@ Note:- Update BootStrap entry in angular.json file
 		  "src/styles.css"
 		]
 
+		
+=======================================
+Building and Deployment of Angular Project
+=======================================		
+ng build --prod --aot
+ng build --prod --aot --base-href /myApp/
+		
 		
 =======================================
 Bindable Properties and Events : Tips
